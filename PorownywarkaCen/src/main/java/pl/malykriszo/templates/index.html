@@ -2,7 +2,6 @@
 <html lang="pl_Pl">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,81 +9,56 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>iLe_Po_iLe</title>
-    <link rel="stylesheet" href="../css/Main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <script language="javascript">
+
         function Przelicz() {
-            var argument = parseFloat(document.calc.liczba.value);
-            var argument2 = parseFloat(document.calc.liczba2.value);
-            var argument3 = parseFloat(document.calc.liczba3.value);
-            var argument4 = parseFloat(document.calc.liczba4.value);
-            var typ_konwersji = document.calc.konwersja.value;
+            const argument = parseFloat(document.calc.liczba.value);
+            const argument2 = parseFloat(document.calc.liczba2.value);
+            const argument3 = parseFloat(document.calc.liczba3.value);
+            const argument4 = parseFloat(document.calc.liczba4.value);
+            const typ_konwersji = document.calc.konwersja.value;
 
-
-            if (isNaN(argument)) {
+            if (!isNaN(argument) && !isNaN(argument2) && !isNaN(argument3) && !isNaN(argument4)) {
+                if (typ_konwersji === "1gram") {
+                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 gram";
+                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 gram";
+                }
+                if (typ_konwersji === "10gram") {
+                    document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 gram";
+                    document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 gram";
+                }
+                if (typ_konwersji === "100gram") {
+                    document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 gram";
+                    document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 gram";
+                }
+                if (typ_konwersji === "1szt") {
+                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 szt.";
+                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 szt.";
+                }
+                if (typ_konwersji === "10ml") {
+                    document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 ml.";
+                    document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 ml.";
+                }
+                if (typ_konwersji === "100ml") {
+                    document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 ml.";
+                    document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 ml.";
+                }
+                if (typ_konwersji === "1litr") {
+                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 litr.";
+                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 litr.";
+                }
+            } else {
                 alert("Wprowadz poprawne dane liczbowe we wszystkich polach");
                 return false;
             }
-            if (isNaN(argument2)) {
-                alert("Wprowadz poprawne dane liczbowe we wszystkich polach");
-                return false;
-            }
-            if (isNaN(argument3)) {
-                alert("Wprowadz poprawne dane liczbowe we wszystkich polach");
-                return false;
-            }
-            if (isNaN(argument4)) {
-                alert("Wprowadz poprawne dane liczbowe we wszystkich polach");
-                return false;
-            }
-            if (typ_konwersji == "1gram") {
-                document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 gram";
-            }
-            if (typ_konwersji == "10gram") {
-                document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 gram";
-            }
-            if (typ_konwersji == "100gram") {
-                document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 gram";
-            }
-            if (typ_konwersji == "1szt") {
-                document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 szt.";
-            }
-            if (typ_konwersji == "10ml") {
-                document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 ml.";
-            }
-            if (typ_konwersji == "100ml") {
-                document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 ml.";
-            }
-            if (typ_konwersji == "1litr") {
-                document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 litr.";
-            }
-            if (typ_konwersji == "1gram") {
-                document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 gram";
-            }
-            if (typ_konwersji == "10gram") {
-                document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 gram";
-            }
-            if (typ_konwersji == "100gram") {
-                document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 gram";
-            }
-            if (typ_konwersji == "1szt") {
-                document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 szt.";
-            }
-            if (typ_konwersji == "10ml") {
-                document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 ml.";
-            }
-            if (typ_konwersji == "100ml") {
-                document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 ml.";
-            }
-            if (typ_konwersji == "1litr") {
-                document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 litr.";
-            }
-
+            return true;
         }
 
     </script>
 </head>
 
-<body bgcolor="yellow">
+<body>
 <h2>KUPUJ TANIEJ !!!
     <span class="badge badge-primary">Porównaj Ceny!</span>
 </h2>
@@ -132,14 +106,11 @@
     </div>
     <br>
 
-    <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz" onClick="Przelicz(); return
-     true">
+    <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz" onClick="Przelicz();">
 
     <br>
     <br>
 
-
-    </div>
     <div class="row">
         <div class="col">
             <label for="wynik"><p class="text-success">CENA #1</p></label>
@@ -170,10 +141,9 @@
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
         <a href="https://bs4.kursbootstrap.pl/tutorial/">kursbootstrap.pl</a>
         <p class="text-warning">Wykonanie i pomysł - MałyKriszo (dla EWY).</p>
+        <p class="text-danger">malykriszopl@gmail.com</p>
     </div>
     <!-- Copyright -->
-
 </footer>
 </body>
-
 </html>
