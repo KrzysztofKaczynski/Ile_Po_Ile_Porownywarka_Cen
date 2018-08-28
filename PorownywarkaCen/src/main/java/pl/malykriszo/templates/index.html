@@ -9,7 +9,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>iLe_Po_iLe</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="main.css">
     <script language="javascript">
 
         function Przelicz() {
@@ -59,12 +59,12 @@
 </head>
 
 <body>
-<h2>KUPUJ TANIEJ !!!
+<h2 class="text-center">KUPUJ TANIEJ !!!
     <span class="badge badge-primary">Porównaj Ceny!</span>
 </h2>
 <br>
 <form name="calc">
-    <div class="row">
+    <div class="row" id="towar1">
         <div class="col">
             <label for="liczba"><p class="text-danger">TOWAR #1</p></label>
             <input type="text" class="form-control" id="liczba" placeholder="Podaj cenę:">
@@ -78,7 +78,7 @@
 
     <br>
 
-    <div class="row">
+    <div class="row" id="towar2">
         <div class="col">
             <label for="liczba3"><p class="text-danger">TOWAR #2</p></label>
             <input type="text" class="form-control" id="liczba3" placeholder="Podaj cenę:">
@@ -92,7 +92,7 @@
 
     <br>
 
-    <div class="form-group">
+    <div class="form-group" id="dostosuj">
         <label for="konwersja"><p class="text-warning">Dostosuj jednostkę miary!</p></label>
         <select multiple class="form-control" id="konwersja">
             <option value="1szt">1. cena za 1 szt.
@@ -104,14 +104,18 @@
             <option value="1litr">7. cena za 1 litr.
         </select>
     </div>
-    <br>
-
-    <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz" onClick="Przelicz();">
 
     <br>
+
+    <div id="przelicz">
+    <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz"
+           onClick="Przelicz();">
+    </div>
+
+    <br>
     <br>
 
-    <div class="row">
+    <div class="row" id="cena">
         <div class="col">
             <label for="wynik"><p class="text-success">CENA #1</p></label>
             <input type="text" class="form-control" id="wynik" readonly>
@@ -139,7 +143,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://bs4.kursbootstrap.pl/tutorial/">kursbootstrap.pl</a>
+        <a href="www.ilepoile.cba.pl">malykriszopl</a>
         <p class="text-warning">Wykonanie i pomysł - MałyKriszo (dla EWY).</p>
         <p class="text-danger">malykriszopl@gmail.com</p>
     </div>
