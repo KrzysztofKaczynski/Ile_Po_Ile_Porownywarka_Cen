@@ -1,23 +1,35 @@
-div#towar1{
-     margin-left: 2px;
-     margin-right: 2px;
- }
-div#towar2{
+div#towar1 {
     margin-left: 2px;
     margin-right: 2px;
+    font-weight: bold;
 }
-div#dostosuj{
+
+div#towar2 {
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: bold;
+}
+
+div#dostosuj {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+div#przelicz {
     margin-left: 15px;
     margin-right: 15px;
 }
-div#przelicz{
-    margin-left: 15px;
-    margin-right: 15px;
-}
-div#cena{
+
+div#cena {
     margin-left: 2px;
     margin-right: 2px;
+    font-weight: bold;
 }
-div#reset{
+
+div#reset {
     text-align: center;
+}
+h2{
+    font-weight: bold;
 }

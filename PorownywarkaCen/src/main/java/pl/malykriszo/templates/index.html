@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>iLe_Po_iLe</title>
     <link rel="stylesheet" href="main.css">
@@ -15,119 +14,126 @@
 </head>
 
 <body>
-<h2 class="text-center">KUPUJ TANIEJ !!!
-    <span class="badge badge-primary">Porównaj Ceny!</span>
-</h2>
-<br>
-<form name="calc">
-    <div class="row" id="towar1">
-        <div class="col">
-            <label for="liczba"><p class="text-danger">TOWAR #1</p></label>
-            <input type="text" class="form-control" id="liczba" placeholder="Podaj cenę:">
+    <h2 class="text-center">KUPUJ TANIEJ !!!
+        <span class="badge badge-primary">Porównaj Ceny!</span>
+    </h2>
+    <br>
+    <form name="calc">
+        <div class="row" id="towar1">
+            <div class="col">
+                <label for="liczba">
+                    <p class="text-danger">TOWAR #1</p>
+                </label>
+                <input type="text" class="form-control" id="liczba" placeholder="Podaj cenę:">
+            </div>
+
+            <div class="col">
+                <label for="liczba2">
+                    <p class="text-danger">WAGA/SZT/POJ.</p>
+                </label>
+                <input type="text" class="form-control" id="liczba2" placeholder="Podaj wagę/szt./poj.:">
+            </div>
         </div>
 
-        <div class="col">
-            <label for="liczba2"><p class="text-danger">WAGA/SZT/POJ.</p></label>
-            <input type="text" class="form-control" id="liczba2" placeholder="Podaj wagę/szt./poj.:">
+        <br>
+
+        <div class="row" id="towar2">
+            <div class="col">
+                <label for="liczba3">
+                    <p class="text-danger">TOWAR #2</p>
+                </label>
+                <input type="text" class="form-control" id="liczba3" placeholder="Podaj cenę:">
+            </div>
+
+            <div class="col">
+                <label for="liczba4">
+                    <p class="text-danger">WAGA/SZT/POJ.</p>
+                </label>
+                <input type="text" class="form-control" id="liczba4" placeholder="Podaj wagę/szt./poj.:">
+            </div>
         </div>
-    </div>
+
+        <br>
+
+        <div class="form-group" id="dostosuj">
+            <label for="konwersja">
+                <p class="text-warning">Dostosuj jednostkę miary!</p>
+            </label>
+            <select multiple class="form-control" id="konwersja">
+                <option value="1szt">1. cena za 1 szt.
+                <option value="1gram">2. cena za 1 gram.
+                <option value="10gram">3. cena za 10 gram.
+                <option value="100gram">4. cena za 100 gram.
+                <option value="10ml">5. cena za 10 ml.
+                <option value="100ml">6. cena za 100 ml.
+                <option value="1litr">7. cena za 1 litr.
+            </select>
+        </div>
+
+        <br>
+
+        <div id="przelicz">
+            <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz" onClick="Przelicz();">
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row" id="cena">
+            <div class="col">
+                <label for="wynik">
+                    <p class="text-success">CENA #1</p>
+                </label>
+                <input type="text" class="form-control" id="wynik" readonly>
+            </div>
+
+            <div class="col">
+                <label for="wynik2">
+                    <p class="text-success">CENA #2</p>
+                </label>
+                <input type="text" class="form-control" id="wynik2" readonly>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div id="reset">
+            <input class="btn btn-danger center-block" type="reset" value="Nowe Dane">
+        </div>
+
+    </form>
 
     <br>
 
-    <div class="row" id="towar2">
-        <div class="col">
-            <label for="liczba3"><p class="text-danger">TOWAR #2</p></label>
-            <input type="text" class="form-control" id="liczba3" placeholder="Podaj cenę:">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://www.linkedin.com/in/krzysztof-kaczy%C5%84ski-403736158/">malykriszopl</a>
+            <p class="text-warning">Wykonanie i pomysł - MałyKriszo (dla EWY).</p>
+            <p class="text-danger">malykriszopl@gmail.com</p>
         </div>
+        <!-- Copyright -->
 
-        <div class="col">
-            <label for="liczba4"><p class="text-danger">WAGA/SZT/POJ.</p></label>
-            <input type="text" class="form-control" id="liczba4" placeholder="Podaj wagę/szt./poj.:">
+        <!-- www.DarmowyLicznik.pl -->
+        <div class="image-rotator text-center">
+            <div class="rotator-slide" id="rotator-slide-1">
+                <a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank">
+                    <img src="https://www.darmowylicznik.pl/licznik.php?id=135394" alt="Darmowy licznik odwiedzin" style="border:0px;" />
+                </a>
+            </div>
         </div>
-    </div>
+        <!-- END www.DarmowyLicznik.pl -->
 
-    <br>
-
-    <div class="form-group" id="dostosuj">
-        <label for="konwersja"><p class="text-warning">Dostosuj jednostkę miary!</p></label>
-        <select multiple class="form-control" id="konwersja">
-            <option value="1szt">1. cena za 1 szt.
-            <option value="1gram">2. cena za 1 gram.
-            <option value="10gram">3. cena za 10 gram.
-            <option value="100gram">4. cena za 100 gram.
-            <option value="10ml">5. cena za 10 ml.
-            <option value="100ml">6. cena za 100 ml.
-            <option value="1litr">7. cena za 1 litr.
-        </select>
-    </div>
-
-    <br>
-
-    <div id="przelicz">
-        <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz"
-               onClick="Przelicz();">
-    </div>
-
-    <br>
-    <br>
-
-    <div class="row" id="cena">
-        <div class="col">
-            <label for="wynik"><p class="text-success">CENA #1</p></label>
-            <input type="text" class="form-control" id="wynik" readonly>
-        </div>
-
-        <div class="col">
-            <label for="wynik2"><p class="text-success">CENA #2</p></label>
-            <input type="text" class="form-control" id="wynik2" readonly>
-        </div>
-
-    </div>
-
-    <br>
-
-    <div id="reset">
-        <input class="btn btn-danger center-block" type="reset" value="Nowe Dane">
-    </div>
-
-</form>
-
-<br>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-
-<!-- Footer -->
-<footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://www.linkedin.com/in/krzysztof-kaczy%C5%84ski-403736158/">malykriszopl</a>
-        <p class="text-warning">Wykonanie i pomysł - MałyKriszo (dla EWY).</p>
-        <p class="text-danger">malykriszopl@gmail.com</p>
-    </div>
-    <!-- Copyright -->
-
-    <!-- www.DarmowyLicznik.pl -->
-    <div class="image-rotator text-center">
-        <div class="rotator-slide" id="rotator-slide-1">
-            <a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank">
-                <img src="https://www.darmowylicznik.pl/licznik.php?id=135394" alt="Darmowy licznik odwiedzin"
-                     style="border:0px;"/>
-            </a>
-        </div>
-    </div>
-    <!-- END www.DarmowyLicznik.pl -->
-
-</footer>
+    </footer>
 </body>
+
 </html>
