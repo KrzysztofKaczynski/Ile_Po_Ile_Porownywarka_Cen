@@ -10,52 +10,8 @@
     <meta charset="UTF-8">
     <title>iLe_Po_iLe</title>
     <link rel="stylesheet" href="main.css">
-    <script language="javascript">
+    <script language="javascript" type="text/javascript" src="script.js"></script>
 
-        function Przelicz() {
-            const argument = parseFloat(document.calc.liczba.value);
-            const argument2 = parseFloat(document.calc.liczba2.value);
-            const argument3 = parseFloat(document.calc.liczba3.value);
-            const argument4 = parseFloat(document.calc.liczba4.value);
-            const typ_konwersji = document.calc.konwersja.value;
-
-            if (!isNaN(argument) && !isNaN(argument2) && !isNaN(argument3) && !isNaN(argument4)) {
-                if (typ_konwersji === "1gram") {
-                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 gram";
-                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 gram";
-                }
-                if (typ_konwersji === "10gram") {
-                    document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 gram";
-                    document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 gram";
-                }
-                if (typ_konwersji === "100gram") {
-                    document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 gram";
-                    document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 gram";
-                }
-                if (typ_konwersji === "1szt") {
-                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 szt.";
-                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 szt.";
-                }
-                if (typ_konwersji === "10ml") {
-                    document.calc.wynik.value = (argument / argument2 * 10).toPrecision(3) + " zł za 10 ml.";
-                    document.calc.wynik2.value = (argument3 / argument4 * 10).toPrecision(3) + " zł za 10 ml.";
-                }
-                if (typ_konwersji === "100ml") {
-                    document.calc.wynik.value = (argument / argument2 * 100).toPrecision(3) + " zł za 100 ml.";
-                    document.calc.wynik2.value = (argument3 / argument4 * 100).toPrecision(3) + " zł za 100 ml.";
-                }
-                if (typ_konwersji === "1litr") {
-                    document.calc.wynik.value = (argument / argument2).toPrecision(3) + " zł za 1 litr.";
-                    document.calc.wynik2.value = (argument3 / argument4).toPrecision(3) + " zł za 1 litr.";
-                }
-            } else {
-                alert("Wprowadz poprawne dane liczbowe we wszystkich polach");
-                return false;
-            }
-            return true;
-        }
-
-    </script>
 </head>
 
 <body>
@@ -108,8 +64,8 @@
     <br>
 
     <div id="przelicz">
-    <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz"
-           onClick="Przelicz();">
+        <input class="btn btn-primary btn-block" type="button" name="przelicz" value="Przelicz"
+               onClick="Przelicz();">
     </div>
 
     <br>
@@ -151,10 +107,11 @@
     <!-- Copyright -->
 
     <!-- www.DarmowyLicznik.pl -->
-    <div class="image-rotator text-center" id="licznik">
+    <div class="image-rotator text-center">
         <div class="rotator-slide" id="rotator-slide-1">
             <a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank">
-                <img src="https://www.darmowylicznik.pl/licznik.php?id=135394" alt="Darmowy licznik odwiedzin" style="border:0px;" />
+                <img src="https://www.darmowylicznik.pl/licznik.php?id=135394" alt="Darmowy licznik odwiedzin"
+                     style="border:0px;"/>
             </a>
         </div>
     </div>
